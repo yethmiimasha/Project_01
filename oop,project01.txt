@@ -1,0 +1,141 @@
+public class Oldphone{
+	String name;
+	void call(){
+		
+	}
+	void message(){
+		
+	}
+	public static void main(String[] args){
+		Oldphone obj1 = new Oldphone();
+	}
+}
+
+public class Newphone extends Oldphone{
+	void browsInternet(){
+		
+	}
+	public static void main(String[] args){
+		Newphone obj2 = new Newphone();
+		obj2.call();
+	}
+}
+
+public class LatestPhone extends Newphone{
+	void camara(){
+		
+	}
+	public static void main(String[]args){
+		 LatestPhone obj3 = new  LatestPhone();
+	}
+}
+
+abstract class LibraryItem{
+	private String title;
+	private String itemID;
+	private boolean checkeOut;
+	
+	LibraryItem(String title,String itemID){
+		this.title = title;
+		this.itemID = itemID;
+		this.checkeOut = false;
+	}
+	public void checkeIn(){
+		checkeOut = true;
+	}
+	public void checkeIn(){
+		checkeOut = false;
+	}
+	public void displayItemDetails(){
+		System.out.print("Title: "+title+" ");
+		System.out.print("Item Id:"+itemID+" ");
+		System.out.print("checke Out: "+checkeOut+"");
+	}
+}
+
+class Book extends LibraryItem{
+	private String author;
+	private int numPages;
+	
+	public Book(String title,String itemID,String aythor,int numPages){
+		super(title,itemID);
+		this.author = author;
+		this.numPages = numPages;
+	}
+}
+
+class Magazine extends LibraryItem{
+	private StringissueDate;
+	private String publisher;
+	
+	Magazine(String title,String itemID,String issueDtae,String publisher){
+		super(title,itemID);
+		this.issueDtae = issueDtae;
+		this.publisher = publisher;
+	}
+}
+
+class LibraryMember{
+	private String memberID;
+	private String name;
+	
+	LibraryMember(String memberID,String name){
+		this.memberID = memberID;
+		this.name = name;
+	}
+	
+	public void displayMemberDtails(){
+		System.out.print("MemberID: "+memberID+" ");
+		System.out.prin("Name: "+name);
+	}
+}
+
+class Main{
+	public stativ oid main(Sring[] args){
+		Book book1 = new Book("The catcher in the Rye","B001","J.D.Salinger"240);
+		Book book2 = new Book("To kill a Mockingbird","B002","Harper Lee",281);
+		Book book3 = new Book("1984","B003","George Orwell",328);
+		Book book4 = new Book("Pride and Pregudice","B004","Jane Austin",432);
+		Book book5 = new book("The Hobbit","B005","J.R.R.Tolkin",320);
+		
+		Magazine magazine1 = new Magazine("National Geographic","M001","August 2023","National Geographic Society");
+		Magazine magazine2 = new Magazine("Time","M002","September 2023","Time USA ,LLC");
+		Magazine magazine3 = new Magazine("Forbes","M003","June 2023","Forbes Media");
+		Magazine magazine4 = new Magazine("Vogue","M004","July 2023","Code Nast");
+		Magazine magazine5 = new Magazine("Sports Illustrated","M005","July 2023","Maven Coalition");
+		
+		LibraryMemeber member1 = new LibraryMemeber("L001","Jhon Doe");
+		LibraryMemeber member2 = new LibraryMemeber("L002","Jane Smith");
+		LibraryMemeber member3 = new LibraryMemeber("L003","David Jhonson");
+		LibraryMemeber member4 = new LibraryMemeber("L004","sarah Williams");
+		LibraryMemeber member5 = new LibraryMemeber("L005","Michael Brown");
+		
+		book1.checkOur();
+		magazine.checkIn();
+		
+		book1.checkIn();
+		magazine.checkOut();
+		
+		System.out.prinln("Books:");
+		book1.displayItemDetails();
+		book2.displayItemDetails();
+		book3.displayItemDetails();
+		book4.displayItemDetails();
+		book5.displayItemDetails();
+		
+		System.out.prinln("\nMagazine:");
+		magazine1.displayItemDetails();
+		magazine2.displayItemDetails();
+		magazine3.displayItemDetails();
+		magazine4.displayItemDetails();
+		magazine5.displayItemDetails();
+		
+		System.out.prinln("\nLibrary Members:");
+		member1.displayItemDetails();
+		member2.displayItemDetails();
+		member3.displayItemDetails();
+		member4.displayItemDetails();
+		member5.displayItemDetails();
+		
+	}
+}
